@@ -11,13 +11,13 @@ def db_scope(fixture_name, config) -> str:
     return "session"
 
 
-# def pytest_addoption(parser):
-#     parser.addoption(
-#         "--func-db",
-#         action="store_true",
-#         default=False,
-#         help="new db for each test"
-#     )
+def pytest_addoption(parser):
+    parser.addoption(
+        "--func-db",
+        action="store_true",
+        default=False,
+        help="new db for each test"
+    )
 
 
 @pytest.fixture(scope=db_scope)
